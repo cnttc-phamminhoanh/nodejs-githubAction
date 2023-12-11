@@ -17,7 +17,7 @@ const START_SERVER = () => {
   })
 
   app.listen(port, hostname, () => {
-    console.log(`Hello Minh Oanh, I am running at http://${hostname}:${port}/`)
+    console.log(`Hello MinhOanh, I am running at http://${hostname}:${port}/`)
   })
 }
 
