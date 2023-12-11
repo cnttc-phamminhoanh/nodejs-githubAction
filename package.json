@@ -1,0 +1,33 @@
+{
+  "name": "nodejs-githubaction",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src --ext js --report-unused-disable-directives --max-warnings 0",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel ./src -d ./build/src",
+    "build": "npm run clean && npm run build-babel",
+    "production": "npm run build && BUILD_MODE=production node ./build/src/server.js",
+    "dev": "BUILD_MODE=dev nodemon --exec babel-node ./src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.5",
+    "@babel/eslint-parser": "^7.23.3",
+    "@babel/node": "^7.22.19",
+    "@babel/plugin-transform-runtime": "^7.23.4",
+    "@babel/preset-env": "^7.23.5",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.23.5",
+    "eslint": "^8.55.0",
+    "nodemon": "^3.0.2"
+  }
+}
